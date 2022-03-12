@@ -1,0 +1,42 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<section id="organizations" class="organizations section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Organizations</h2>
+        <p>Have a look at our organizations :)</p>
+      </div>
+
+      <div class="row">
+        {% if organizations %}
+        {% for organization in organizations %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card organization-preview">
+                <!-- <img class="card-img-top" src="{{ organization.photo_main.url }}" alt=""> -->
+                <img class="card-img-top" src="{{ organization.photo_main.url }}" alt="">
+              <div class="card-body">
+                <div class="organization-heading text-center">
+                  <h4 class="text-primary">{{ organization.name }}</h4>
+                  <p>
+                    <i class="fas fa-map-marker text-secondary"></i> {{ organization.objective }}</p>
+                </div>
+                <hr>
+                <div class="row text-secondary pb-2">
+                  <div class="col-6">
+                    <i class="fa fa-calendar" aria-hidden="true"></i> {{ organization.date_joined  }}</div>
+                </div>
+                <hr>
+                <a href="{% url 'organization' organization.id %}" class="btn btn-primary btn-block">More Info</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-md-12">
+          <p>No Organizations Available</p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock content %}

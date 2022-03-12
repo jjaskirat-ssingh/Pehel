@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="hack.css">
+        
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/cc342b0a2c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+          
+
+            <span class="logo navLogo"><a href="#">पहल</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">पहल</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Donate🤍</a></li>
+                      <li><a href="#">Organizations</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                
+        </div>
+    </nav>
+
+    <!--SLIDESHOW-->
+    
+        <div class="slideshow-container">
+        
+        <div class="mySlides fade">
+          <img src="Quotes-021.jpg" style="width:100%; height:625px">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="give.jpg" style="width:100%; height:625px">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="mother.jpeg" style="width:100%; height:650px">
+            <!--<div class="text">Caption Text</div>*/-->
+          </div>
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        <div class="text"> 
+            <h1 class="hello"> ABOUT US</h1>
+            
+            
+                <p class="text1">
+                    Having basic amenities is the right of each and every of person. But not each one of us is privileged to have whatever we want.
+                     <br>
+                    "We make a living by what we get, but we make a life by what we give."
+                     <br><br>
+                    We at Pehel are connecting the people who want to do charity with people in need.We believe that helping hands are better than praying lips.Even a small donation of yours can make a difference.
+                    <br>
+                    Some of the things which people can donate are clothes and books.We work in collaboration with different NGOs. We collect donations from people and provide it to the NGOs. Currently,we are working in Patiala only,but we are expecting to expand our cause to further parts of country also. 
+                     
+                </p>
+                <button class="button">
+                    <a href="#">Read more</a>
+                </button>
+            </div>
+        <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        </script>
+        
+
+
+
+<script>
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+
+      
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+    nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+    let clickedElm = e.target;
+
+    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+        nav.classList.remove("active");
+    }
+});
+
+</script>
+  <!--Quotes-->
+  <div class="testimonial_m">
+    <div class="container">
+        <div class="box">
+            <div class="imgBox">
+                <img src="dalai lama.jpg" width="100%" height="100%">
+            </div>
+            <p><b>It is not enough to be compassionate. You must act.</b></p><br>
+                <p>Action begins with a desire. Naturally, heartfelt compassion leads to action. The vulnerable and disadvantaged in this world need more than pity. They need to see love operate selflessly and sacrificially.
+            </p>
+            <h4>Dalai Lama, Lhamo Thondup<br><span>Highest spiritual leader, Tibet</span></h4>
+        </div>
+        <div class="box">
+            <div class="imgBox">
+                <img src="barack obama.jpg" width="100%" height="100%">
+            </div>
+            <p><b>Change will not come if we wait for some other person, or if we wait for some other time. We are the ones we’ve been waiting for. We are the change that we seek.</b></p>
+                <p>Social workers have the education, experience, and skills necessary to initiate the change they want to see. They can have a tangible impact on the people they serve.
+            </p>
+            <h4>Barack Obama<br><span>44th president of the United States</span></h4>
+        </div>
+</div>
+</div>
+<!--FOOTER-->
+<div class="body_footer">
+  <footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">पहल</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Donate🤍</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+        
+        <ul class="box input-box">
+          <li class="link_name">Contact us</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Submit"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Pehel © 2022&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Pehel</a>All rights reserved</span>
+        <span align="centre">With 💖, Team Pehel</span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

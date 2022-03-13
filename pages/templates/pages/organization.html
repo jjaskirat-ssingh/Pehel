@@ -1,4 +1,4 @@
-{% extends "pages/base.html" %}
+{% extends "pages/base_old.html" %}
 {% load static %}
 {% block content %}
   
@@ -21,7 +21,7 @@
   <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/style.css' %}" rel="stylesheet">
 
   <br>
 
@@ -39,33 +39,33 @@
                   <img src="{{ organization.photo_main.url }}" alt="">
                 </div>
 
-                {% if event.photo_1 %}
+                {% if organization.photo_1 %}
                 <div class="swiper-slide">
-                  <img src="{{ event.photo_1.url }}" alt="">
+                  <img src="{{ organization.photo_1.url }}" alt="">
                 </div>
                 {% endif %}
 
-                {% if event.photo_2 %}
+                {% if organization.photo_2 %}
                 <div class="swiper-slide">
-                  <img src="{{ event.photo_2.url }}" alt="">
+                  <img src="{{ organization.photo_2.url }}" alt="">
                 </div>
                 {% endif %}
 
-                {% if event.photo_3 %}
+                {% if organization.photo_3 %}
                 <div class="swiper-slide">
-                  <img src="{{ event.photo_3.url }}" alt="">
+                  <img src="{{ organization.photo_3.url }}" alt="">
                 </div>
                 {% endif %}
 
-                {% if event.photo_4 %}
+                {% if organization.photo_4 %}
                 <div class="swiper-slide">
-                  <img src="{{ event.photo_4.url }}" alt="">
+                  <img src="{{ organization.photo_4.url }}" alt="">
                 </div>
                 {% endif %}
 
-                {% if event.photo_5 %}
+                {% if organization.photo_5 %}
                 <div class="swiper-slide">
-                  <img src="{{ event.photo_5.url }}" alt="">
+                  <img src="{{ organization.photo_5.url }}" alt="">
                 </div>
                 {% endif %}
 
@@ -73,7 +73,8 @@
               <div class="swiper-pagination"></div>
             </div>
           </div>
-
+        </div>
+        </div>
           <div class="col-lg-4">
             <div class="portfolio-info">
               <h3>{{ organization.name }}</h3>
@@ -83,10 +84,55 @@
                 
               </ul>
             </div><br>
-            <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Send Query to NGO</button>
+            <button class="btn-primary btn-block btn-lg" data-toggle="modal" href="#" data-target="#inquiryModal">Send Query to NGO</button>
           </div>
 
-        </div>
+          <div class="modal fade" id="inquiryModal" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="inquiryModalLabel">Direct inquiry to Organization</h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
+                    {% if user.is_authenticated %}
+                      <input type="hidden" name="user_id" value="{{ user.id }}">
+                    {% else %}
+                      <input type="hidden" name="user_id" value="0">
+                    {% endif %}
+                    <input type="hidden" name="organization_email" value="{{ organization.email }}">
+                    <input type="hidden" name="organization_id" value="{{ organization.id }}">
+                    <div class="form-group">
+                      <label for="property_name" class="col-form-label">Organization:</label>
+                      <input type="text" name="organization" class="form-control" value="{{ organization.name }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="name" class="col-form-label">Name:</label>
+                      <input type="text" name="name" class="form-control" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %} required>
+                    </div>
+                    <div class="form-group">
+                      <label for="email" class="col-form-label">Email:</label>
+                      <input type="email" name="email" class="form-control" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %} required>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone" class="col-form-label">Phone:</label>
+                      <input type="text" name="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="message" class="col-form-label">Message:</label>
+                      <textarea name="message" class="form-control"></textarea>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Send" class="btn btn-block btn-secondary">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <div class="modal fade" id="inquiryModal" role="dialog">
             <div class="modal-dialog">

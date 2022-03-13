@@ -1,8 +1,11 @@
 {% extends "pages/base.html" %}
+{% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static 'pages/new_hack.css' %}">
+
       <div class="text"> 
         <h1 class="hello"> ABOUT US</h1>
-        
+         
         
             <p class="text1">
                 Having basic amenities is the right of each and every of person. But not each one of us is privileged to have whatever we want.
@@ -21,7 +24,7 @@
 <div class="wrap">
     <div class="first">
         <div class="image">
-        <img src="download (8).jpg" width="300 px" height="200 px"></div>
+        <img src="{% static 'pages/download (8).jpg' %}" width="300 px" height="200 px"></div>
             <h3>
                 Collection
             </h3>
@@ -33,20 +36,20 @@
     </div>
     <div class="first">
         <div class="image">
-        <img src="download (9).jpg" width="300 px" height="200 px">
+        <img src="{% static 'pages/download (9).jpg' %}" width="300 px" height="200 px">
     </div>
        <h3>
         Categorization
        </h3>
        <div class="second">
-       <p  >
+       <p>
            We categorize the books and clothes according to the organizations who need them.
        </p>
     </div>
     </div>
     <div class="first">
         <div class="image">
-        <img src="WhatsApp Image 2020-07-05 at 13.20.44.jpeg" width="300px" height="200px"></div>
+        <img src="{% static 'pages/WhatsApp Image 2020-07-05 at 13.20.44.jpeg' %}" width="300px" height="200px"></div>
         <h3>
             Distribution
         </h3>

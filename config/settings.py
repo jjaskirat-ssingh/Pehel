@@ -22,6 +22,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'donation',
     'contacts',
     'organizations',
     'pages',

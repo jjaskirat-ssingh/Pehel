@@ -1,37 +1,140 @@
 {% extends "pages/base.html" %}
+{% load static %}
 {% block content %}
-    {% for post in posts %}
-        <article class="media content-section">
-          <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-            </div>
-            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
+        <!--SLIDESHOW-->
+    
+        <div class="slideshow-container">
+  
+          <div class="mySlides fade">
+            <img src="{% static 'pages/Quotes-021.jpg' %}" style="width:100%; height:625px">
           </div>
-        </article>
-    {% endfor %}
-    {% if is_paginated %}
+          
+          <div class="mySlides fade">
+            <img src="{% static 'pages/give.jpg' %}" style="width:100%; height:625px">
+          </div>
+  
+          <div class="mySlides fade">
+              <img src="{% static 'pages/mother.jpeg' %}" style="width:100%; height:650px">
+              <!--<div class="text">Caption Text</div>*/-->
+            </div>
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+          </div>
+          <div class="text"> 
+            <br>
+              <h1 class="hello"> ABOUT US</h1>
+              
+              
+                  <p class="text1">
+                      Having basic amenities is the right of each and every of person. But not each one of us is privileged to have whatever we want.
+                       <br>
+                      "We make a living by what we get, but we make a life by what we give."
+                       <br><br>
+                      We at Pehel are connecting the people who want to do charity with people in need.We believe that helping hands are better than praying lips.Even a small donation of yours can make a difference.
+                      <br>
+                      Some of the things which people can donate are clothes and books.We work in collaboration with different NGOs. We collect donations from people and provide it to the NGOs. Currently,we are working in Patiala only,but we are expecting to expand our cause to further parts of country also. 
+                       
+                  </p>
+                  <button class="button">
+                      <a href="{% url 'about' %}">Read more</a>
+                  </button>
+              </div>
+          <script>
+          var slideIndex = 0;
+          showSlides();
+          
+          function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+          }
+          </script>
+          
+  
+  
+  
+  <script>
+  
+  const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+  
+        let getMode = localStorage.getItem("mode");
+            if(getMode && getMode === "dark-mode"){
+              body.classList.add("dark");
+            }
+  
+  // js code to toggle dark and light mode
+        modeToggle.addEventListener("click" , () =>{
+          modeToggle.classList.toggle("active");
+          body.classList.toggle("dark");
+  
+          // js code to keep user selected mode even page refresh or file reopen
+          if(!body.classList.contains("dark")){
+              localStorage.setItem("mode" , "light-mode");
+          }else{
+              localStorage.setItem("mode" , "dark-mode");
+          }
+        });
+  
+  
+        
+  //   js code to toggle sidebar
+  sidebarOpen.addEventListener("click" , () =>{
+      nav.classList.add("active");
+  });
+  
+  body.addEventListener("click" , e =>{
+      let clickedElm = e.target;
+  
+      if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+          nav.classList.remove("active");
+      }
+  });
+  
+  </script>
+    <!--Quotes-->
+    <div class="testimonial_m">
+      <div class="container">
+          <div class="box">
+              <div class="imgBox">
+                  <img src="{% static 'pages/dalai lama.jpg' %}" width="100%" height="100%">
+              </div>
+              <p><b>It is not enough to be compassionate. You must act.</b></p><br>
+                  <p>Action begins with a desire. Naturally, heartfelt compassion leads to action. The vulnerable and disadvantaged in this world need more than pity. They need to see love operate selflessly and sacrificially.
+              </p>
+              <h4>Dalai Lama, Lhamo Thondup<br><span>Highest spiritual leader, Tibet</span></h4>
+          </div>
+          <div class="box">
+              <div class="imgBox">
+                  <img src="{% static 'pages/barack obama.jpg' %}" width="100%" height="100%">
+              </div>
+              <p><b>Change will not come if we wait for some other person, or if we wait for some other time. We are the ones we’ve been waiting for. We are the change that we seek.</b></p>
+                  <p>Social workers have the education, experience, and skills necessary to initiate the change they want to see. They can have a tangible impact on the people they serve.
+              </p>
+              <h4>Barack Obama<br><span>44th president of the United States</span></h4>
+          </div>
+  </div>
+  </div>
 
-      {% if page_obj.has_previous %}
-        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-      {% endif %}
-
-      {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-      {% endfor %}
-
-      {% if page_obj.has_next %}
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-      {% endif %}
-
-    {% endif %}
+  
 {% endblock content %}

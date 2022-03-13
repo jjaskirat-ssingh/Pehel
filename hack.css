@@ -724,7 +724,103 @@ footer .bottom-details .bottom_text{
             right: 40px;
           }
         
+      .hello,h3{
+    text-align: center;
+    margin-top:0px;
+    
+    font-family: 'Playfair Display';
+   
+}
+.text{
+    background-color:#001730;
+    color:white;
+    text-align:center;
+    padding:2%;
+    font-family: sans-serif;
+}
+body{
+    margin:0px;
+}
+.model{
+    margin:3%;
+    text-align:center;
+    font-family: 'Playfair Display';
+    border-left:2%;
+    font-size: x-large;
+}
+.wrap{
+    background-color:#4AD7D1;
+    display:flex;
+    padding:2%;
+    
+   
+}
 
+.image{
+    margin:3%;
+   display:inline-block;
+   
+  
+   object-fit:contain;
+   justify-content: center;
+}
+
+.first{
+    
+   width:50%;
+    background-color:antiquewhite;
+    text-align:center;
+    width:calc(100%/3);
+}
+.second{
+   display:inline-block;
+    padding:2%;
+    width:calc(100%/3);
+    text-align:center;
+    margin-left:5%;
+    font-family: sans-serif;
+    border-color: black;
+    border-style:solid;
+    border-top:2%; 
+    border-right:none;
+    border-left:none;
+    border-bottom:none;
+}
+img{
+    display:flex;
+}
+@media only screen and (max-width:1440px){
+    img{
+        width:250px;
+        height:200px;
+    }}
+    @media only screen and (max-width:1024px){
+        img{
+            width:200px;
+            height:150px;
+        }}
+        @media only screen and (max-width:768px){
+            img{
+                width:150px;
+                height:100px;
+            }}
+            @media only screen and (max-width:425px){
+                img{
+                    width:90px;
+                    height:80px;
+                }}
+                @media screen and (max-width:320px){
+                    img{
+                        width:50px;
+                        height:50px;
+                    }
+                    h3{
+                        font-size: small;
+                    }
+                    .second{
+                        font-size:x-small;
+                    }
+                }
 
 
 

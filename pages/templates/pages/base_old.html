@@ -35,7 +35,7 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-              <button class="btn-primary btn-block btn-lg" data-toggle="modal" href="#" data-target="#">Donate</button>
+              <!-- <button class="btn-primary btn-block btn-lg" data-toggle="modal" href="#" data-target="#">Donate</button> -->
               <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
             {% else %}
               <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>

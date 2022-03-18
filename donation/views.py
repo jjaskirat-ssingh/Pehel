@@ -8,7 +8,7 @@ def donation(request):
     name = request.POST['name']
     email = request.POST['email']
     phone = request.POST['phone']
-    address = request.POST['message']
+    address = request.POST['address']
     remarks = request.POST['remarks']
     user_id = request.POST['user_id']
     #pickup_date = request.POST['pickup_date']

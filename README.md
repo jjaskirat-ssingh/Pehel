@@ -1,5 +1,10 @@
-# Rubix-Cube
+# Pehel (पहल)
 
+-	"Pehel" was designed with an aim to collaborate with different orphanages, old-age homes and NGOs to assist them in their cause, to provide the donations to the needy individuals. 
+-	It acts as a bridge between the donors and these organizations. Also, any individual can communicate their inquiry (if they wish) to these organizations using the portal. 
+-	This project was selected in the “Top 12” in HackOwasp 4.0 organized by Owasp Student Chapter, Thapar Institute of Engineering and Technology. 
+
+## Screenshots
 ![ss1](https://user-images.githubusercontent.com/72308994/158048187-dca47c25-4fee-443f-8439-bd1aaef88753.jpg)
 
 ![ss2](https://user-images.githubusercontent.com/72308994/158048204-23ae50a2-e821-4013-bc1e-49d14500eb9f.jpg)
@@ -8,15 +13,15 @@
 
 ![ss4](https://user-images.githubusercontent.com/72308994/158048219-876a1368-71f1-4946-b305-4c56e18c8287.jpg)
 
-![ss5](https://user-images.githubusercontent.com/72308994/158048225-f70f457e-d4ec-4ba7-9318-c9e38d93df8b.jpg)
+![image](https://user-images.githubusercontent.com/72308994/179781053-db012b7b-0918-44f3-8d4b-eb783d9f66a5.png)
 
-![ss6](https://user-images.githubusercontent.com/72308994/158048229-e57b993e-fbfa-4e78-8991-3a27d5de4fa2.jpg)
+![image](https://user-images.githubusercontent.com/72308994/179781540-d67cb740-2035-4a5e-b86c-5d2e05723461.png)
 
-![ss7](https://user-images.githubusercontent.com/72308994/158048234-5ce1dab5-de66-43df-bd6d-bc398537efb4.jpg)
+![image](https://user-images.githubusercontent.com/72308994/179781986-627bb1f2-698d-44d5-93e8-8a269ea29049.png)
 
 ![ss8](https://user-images.githubusercontent.com/72308994/158048240-4ada3159-3b84-4b79-95db-f9995a5746f1.jpg)
 
-![ss9](https://user-images.githubusercontent.com/72308994/158048245-c269a183-0928-4b99-8d8b-645e5ec2d69f.jpg)
+![image](https://user-images.githubusercontent.com/72308994/179782267-d9ac536a-45da-4f5c-9921-ace15bf0e91c.png)
 
 ![ss10](https://user-images.githubusercontent.com/72308994/158048251-04aed2b8-4f91-4486-aa39-3806bfb1aae1.jpg)
 
